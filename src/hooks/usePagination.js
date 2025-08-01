@@ -25,7 +25,7 @@ export const usePagination = (data, itemsPerPage = 5) => {
   const nextPage = () => goToPage(currentPage + 1);
   const prevPage = () => goToPage(currentPage - 1);
   
-  // Reset to page 1 when data changes
+
   useMemo(() => {
     setCurrentPage(1);
   }, [data.length]);

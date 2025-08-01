@@ -1,4 +1,4 @@
-// components/common/Pagination.js
+
 import React from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -16,7 +16,6 @@ const Pagination = ({ currentPage, totalPages, onPageChange, hasNext, hasPrev })
         <ChevronLeft size={16} />
       </button>
       
-      {/* Page numbers */}
       <div className="flex items-center space-x-1">
         {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
           let pageNum;

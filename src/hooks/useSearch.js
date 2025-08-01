@@ -1,4 +1,4 @@
-// hooks/useSearch.js
+
 import { useState, useMemo } from 'react';
 
 export const useSearch = (data, searchFields) => {
@@ -11,7 +11,7 @@ export const useSearch = (data, searchFields) => {
     
     return data.filter(item =>
       searchFields.some(field => {
-        // Handle nested fields like 'courses.title'
+
         const value = field.split('.').reduce((obj, key) => {
           if (obj && obj[key] !== undefined) {
             return obj[key];
@@ -21,14 +21,14 @@ export const useSearch = (data, searchFields) => {
         
         if (value === null || value === undefined) return false;
         
-        // Handle arrays (like courses array)
+
         if (Array.isArray(value)) {
           return value.some(arrayItem => 
             arrayItem && arrayItem.toString().toLowerCase().includes(normalizedSearchTerm)
           );
         }
         
-        // Handle regular strings/numbers
+
         return value.toString().toLowerCase().includes(normalizedSearchTerm);
       })
     );

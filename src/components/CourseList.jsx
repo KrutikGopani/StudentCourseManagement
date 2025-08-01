@@ -24,7 +24,7 @@ const CourseList = () => {
   const handleEdit = async (courseId) => {
     try {
       const response = await axios.get(`https://localhost:7186/api/Courses/GetCourseById/${courseId}`);
-      setSelectedCourse(response.data); // Pass this to form
+      setSelectedCourse(response.data);
     } catch (error) {
       console.error('Error fetching course by ID:', error);
     }

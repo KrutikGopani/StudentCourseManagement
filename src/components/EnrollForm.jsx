@@ -10,7 +10,7 @@ const EnrollmentForm = ({ onSuccess }) => {
   const [students, setStudents] = useState([]);
   const [courses, setCourses] = useState([]);
 
-  // Load students and courses from API
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -61,7 +61,7 @@ const EnrollmentForm = ({ onSuccess }) => {
         return;
       }
 
-      // Reset form
+
       setFormData({ studentId: '', courseId: '' });
       onSuccess?.();
     } catch (error) {

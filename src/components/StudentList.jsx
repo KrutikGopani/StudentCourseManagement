@@ -47,7 +47,7 @@ const StudentList = ({ onEdit }) => {
   const handleEdit = async (student) => {
     try {
       const response = await axios.get(`https://localhost:7186/api/students/GetStudentById/${student.studentId}`);
-      onEdit(response.data); // Send the fetched data to the parent
+      onEdit(response.data);
     } catch (error) {
       console.error('Error fetching student by ID:', error);
     }

@@ -22,7 +22,7 @@ const CourseForm = ({ onCourseCreated }) => {
     try {
       await axios.post('https://localhost:7186/api/Courses/CreateCourse', formData);
       setFormData({ courseName: '', description: '' });
-      onCourseCreated(); // Refresh course list
+      onCourseCreated();
     } catch (err) {
       console.error(err);
       setError('Failed to create course');
